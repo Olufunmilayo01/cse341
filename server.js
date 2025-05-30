@@ -1,13 +1,26 @@
 const express = require("express");
-
 const mongodb = require("./data/database");
 const app = express();
 
 const contactsRoutes = require("./routes/contacts");
-app.use("/contacts", contactsRoutes);
+const bodyParser = require("body-parser");
 
-const port = process.env.PORT || 3000;
-// app.use("/", require("./routes"));
+const port = process.env.PORT || 3001;
+app.use(bodyParser.json());
+app.use("/contacts", contactsRoutes);
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+app.use("/", require("./routes"));
 
 mongodb.initDb((err) => {
   if (err) {
@@ -18,31 +31,3 @@ mongodb.initDb((err) => {
     });
   }
 });
-
-// const express = require("express");
-// const app = express();
-// //const port = process.env.PORT || 3000;
-
-// app.get("/", (req, res) => {
-//   res.send("Hello");
-// });
-
-// const port = 3000;
-
-// app.listen(process.env.port || port);
-// console.log("Web Server is listening at port " + (process.env.port || port));
-
-// const { connectToServer } = require('./db/connection');
-
-// connectToServer((err) => {
-//   if (!err) {
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}`);
-//     });
-//   } else {
-//     console.error(err);
-//   }
-// });
-
-// const contactsRouter = require('./routes/contacts');
-// app.use('/contacts', contactsRouter);
