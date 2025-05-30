@@ -5,7 +5,7 @@
     "description": "Contacts Api",
     "version": "1.0.0"
   },
-  "host": "https://cse341-spring25-qmqf.onrender.com",
+  "host": "cse341-spring25-qmqf.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
