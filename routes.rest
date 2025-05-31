@@ -1,14 +1,14 @@
 ### LOCALHOST
 ### Get all contacts
-GET http://localhost:3000/contacts
+GET http://localhost:3001/contacts
 
 
 ### Get contact by Id
-GET http://localhost:3000/contacts/6831eccc0c69a0c448d6b02c
+GET http://localhost:3001/contacts/6831eccc0c69a0c448d6b02c
 
 
 ### Create contact
-POST http://localhost:3000/contacts HTTP/1.1
+POST http://localhost:3001/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -34,7 +34,7 @@ content-type: application/json
 }
 
 ### DELETE contact
-DELETE http://localhost:3000/contacts/683604f236e4dc5a0b460ef6 HTTP/1.1
+DELETE http://localhost:3001/contacts/683b66d2c3cc975b3c50d0ec HTTP/1.1
 
 
 
