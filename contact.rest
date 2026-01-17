@@ -1,0 +1,9 @@
+### Get all contacts
+GET http://localhost:3000/contacts
+Content-Type: application/json
+
+###
+
+### Get a single contact by ID (replace `:id` with a real one from the database)
+GET http://localhost:3000/contacts/6831eccc0c69a0c448d6b02c
+Content-Type: application/json
