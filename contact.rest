@@ -5,5 +5,5 @@ Content-Type: application/json
 ###
 
 ### Get a single contact by ID (replace `:id` with a real one from the database)
-GET http://localhost:3000/contacts/6831eccc0c69a0c448d6b02c
+GET http://localhost:3000/contacts/696ba5d032fd82aed5e4bb2b
 Content-Type: application/json
